@@ -18,11 +18,11 @@ jobs:
         cd Complete_HashTable
         g++ -std=c++17 src/main.cpp -o main
     - name: Run make
-      run: ./make
+      run: make -f makefile
       working-directory: Complete_HashTable
     - name: Run make check
-      run: ./make check
+      run: make -f makefile check
       working-directory: Complete_HashTable
     - name: Run make distcheck
-      run: ./make distcheck
+      run: make -f makefile distcheck
       working-directory: Complete_HashTable
