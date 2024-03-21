@@ -13,11 +13,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: configure
-      run: ./
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - name: Configure with C++17
+      run: |
+        cd Complete_HashTable
+        g++ -std=c++17 src/main.cpp -o main
+    - name: Run make
+      run: ./make
+      working-directory: Complete_HashTable
+    - name: Run make check
+      run: ./make check
+      working-directory: Complete_HashTable
+    - name: Run make distcheck
+      run: ./make distcheck
+      working-directory: Complete_HashTable
